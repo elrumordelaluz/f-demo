@@ -11,7 +11,7 @@ Then:
     gulp
 
 
-Remember to edit the "name" attribute of the `package.json` file with the same name of the generated font.
+*Remember to edit the "name" attribute of the `package.json` file with the same name of the generated font.*
 
 It's important to have:
 - a `.scss` file for the _@font-face_ under `/styles`
