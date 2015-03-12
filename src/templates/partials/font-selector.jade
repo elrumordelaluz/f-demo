@@ -1,0 +1,35 @@
+section#font_options_bar
+  nav#nav.navbar.navbar-default.font_options(role='navigation')
+    .container
+      .navbar-header
+        button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+          span.sr-only Toggle options
+          span.mobile-more
+        span Font Name: 
+          strong #{iconFont.cssName}
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li Glyphs: 
+            strong #{iconFont.q}
+          li.code_select
+            input#chkbx-1.checkbox(type='checkbox')
+            label(for='chkbx-1') Show Codes
+          li.size_select
+            select.selectpicker
+              option(value='16') 16
+              option(value='32') 32
+              option(value='48') 48
+              option(value='64', selected) 64
+              option(value='80') 80
+              option(value='96') 96
+              option(value='112') 112
+              option(value='128') 128
+          li.icons-search
+            input#search-show(type='checkbox')
+            label(for='search-show')
+              span(class='#{iconFont.searchIcon}')
+            input#search(type='text',placeholder='Search icons')
+        span.bg-switch.pull-right
+          input#s1.sw(type='checkbox')
+          label.switch(for='s1')
+            span.bg_circle

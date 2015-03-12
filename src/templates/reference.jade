@@ -1,0 +1,86 @@
+extend partials/mainLayout
+
+block header
+  header#top-bar
+    .container
+      img(src='assets/img/logo.png',alt='logo')
+
+block hero
+  section#hero_box
+    .container
+      h1.refs-title Reference
+      p 
+        | You will find in this document a list of all the glyphs in the icon font along with their codes. 
+        br
+        | (Hint: you can install the font and copy/paste any of the small icons located next to the unicode with your desktop software of choice.)
+
+  
+
+block content
+  
+  include partials/font-selector.jade
+
+  section#content
+    .container
+      p#search-empty There's no match for your search: 
+        strong
+  
+      #all-icons
+        h3.subtitle.text-center Stroked Icons
+        .row
+          - for (var i = 0; i < icons.names.length; ++i) {
+            - if(icons.names[i].slice(-2) !== '-f') {
+              .font-icon-list.col-md-2.col-sm-3.col-xs-6.col-xs-6
+                .font-icon-detail
+                  span(class='#{icons.names[i]}')
+                  input.font-icon-name(type='text',readonly,value='#{icons.names[i]}')
+                fieldset.font-icon-code
+                  input.code-value(type='text',readonly,value='#{icons.codes[i]}')
+                  input.unicode(type='text',readonly,maxlength='1',value='#{icons.unicodes[i]}')
+                  input.unicode-text(type='text',readonly,value='&#x#{icons.codes[i]}')
+            - }
+          - }
+        h3.subtitle.text-center Filled Icons
+        .row
+          - for (var i = 0; i < icons.names.length; ++i) {
+            - if(icons.names[i].slice(-2) == '-f') {
+              .font-icon-list.col-md-2.col-sm-3.col-xs-6.col-xs-6
+                .font-icon-detail
+                  span(class='#{icons.names[i]}')
+                  input.font-icon-name(type='text',readonly,value='#{icons.names[i]}')
+                fieldset.font-icon-code
+                  input.code-value(type='text',readonly,value='#{icons.codes[i]}')
+                  input.unicode(type='text',readonly,maxlength='1',value='#{icons.unicodes[i]}')
+                  input.unicode-text(type='text',readonly,value='&#x#{icons.codes[i]}')
+            - }
+          - }
+      //- #all-icons.row
+      //-   - for (var i = 0; i < icons.names.length; ++i) {
+      //-     .font-icon-list.col-md-2.col-sm-3.col-xs-6.col-xs-6
+      //-       .font-icon-detail
+      //-         span(class='#{icons.names[i]}')
+      //-         input.font-icon-name(type='text',readonly,value='#{icons.names[i]}')
+      //-       fieldset.font-icon-code
+      //-         input.code-value(type='text',readonly,value='#{icons.codes[i]}')
+      //-         input.unicode(type='text',readonly,maxlength='1',value='#{icons.unicodes[i]}')
+      //-         input.unicode-text(type='text',readonly,value='&#x#{icons.codes[i]}')
+      //-   - } 
+
+
+block footer
+  footer.main-footer.refs
+    .container
+      p 
+        | 2015 © #{iconFont.name} Font Set by Pixeden.
+        br 
+        | Version · #{iconFont.version}
+
+
+
+block scripts
+  
+  script(type='text/javascript', src='assets/js/main.js')
+  script.
+    $(document).ready(function(){
+
+    }) // Ready

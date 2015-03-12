@@ -1,0 +1,143 @@
+
+/********************
+*** Checkbox ***
+*********************/
+
+.checkbox + label {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  position: relative;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px 40px 0px 20px; 
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.checkbox + label:before {
+  content: '';
+  position: absolute;
+  right: 14px;
+  top: 18px;
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  background: #fff;
+  text-align: center;
+  line-height: 14px;
+  border: 1px solid #dcdcdc;
+  color: #1a1a1a;
+}
+
+.checkbox:checked + label:before { content: '✓'; }
+
+.checkbox, .radio { display: none; }
+
+.navbar-toggle .mobile-more {
+  width: 30px;
+  height: 34px;
+}
+
+.navbar-toggle .mobile-more:after {
+  // font-family: $fontName;
+  font-family: $fontExtraName;
+
+  // TO EDIT: change the icon content "Less"
+  content: $lessIcon;
+}
+
+.navbar-toggle.collapsed .mobile-more:after {
+
+  // TO EDIT: change the icon content "More"
+  content: $moreIcon;
+}
+
+
+// .copied-text {
+//   position: absolute;
+//   width: 150px;
+//   height: 20px;
+//   margin: -20px 0 0 -75px;
+//   opacity: 0;
+//   -webkit-animation: copied-text .5s ease-out;
+//   animation: copied-text .5s ease-out;
+//   -webkit-transform: scale(1.5);
+//   transform: scale(1.5);
+// }
+
+// @-webkit-keyframes copied-text {
+//  0% {
+//    -webkit-transform: scale(1);
+//    opacity: 1;
+//   }
+// }
+
+// @keyframes copied-text {
+//   0% {
+//     transform: scale(1);
+//     opacity: 1;
+//   }
+// }
+
+
+
+
+
+/*********************
+*** Switch  ***
+**********************/
+
+.sw { display: none; }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  vertical-align: text-bottom;
+  cursor: pointer;
+  border-radius: 24px;
+  transition: background 250ms 100ms;
+  background-color: #c7c7c7;
+  width: 50px;
+  height: 28px;
+  line-height: 50px;
+  margin: 10px 0px 0px 0px;
+}
+
+.switch:after {
+  position: absolute;
+  content: '';
+  width: 24px;
+  height: 24px;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: 150ms linear;
+  background-color: white;
+}
+
+input:checked + .switch { background: #000000; }
+
+input:checked + .switch:after { left: 24px; }
+
+.bg_circle:before, .bg_circle:after {
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  margin-top: -5px;
+  border-radius: 50%;
+}
+
+.bg_circle:before {
+  box-shadow: inset 0 0 0 1px #a0a0a0;
+  left: -22px;
+}
+
+.bg_circle:after {
+  background: #9f9f9f;
+  right: -22px;
+}
+
+input:checked + .switch .bg_circle:before { box-shadow: inset 0 0 0 1px #787878; }
+
+

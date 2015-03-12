@@ -1,0 +1,108 @@
+extend partials/mainLayout
+
+block header
+  header#top-bar
+    .container
+      img(src='assets/img/logo.png',alt='logo')
+      a.download.pull-right(href='#{iconFont.downloadPath}') Download
+
+block showcase
+  section#showcase
+    .container
+      hgroup
+        include ../images/edition.svg
+        br
+        h1 Comunication Icon Set Font
+        h2 A complete set of
+          span  #{iconFont.q}
+          |  #{iconFont.name}
+
+
+block hero
+  section#hero_box
+    .container
+      p
+      |  The Comunication series of The Icon Set is a custom 
+      span.italic @font-face 
+      |   icon font that can be styled dynamically using CSS.
+      br
+      |  Those icons have a common and pleasing style that will make it easy to add to any project.
+  
+
+block content
+  
+  include partials/font-selector.jade
+
+  section#content
+    .container
+      p#search-empty There's no match for your search: 
+        strong
+  
+      #all-icons
+        h3.subtitle.text-center Stroked Icons
+        .row
+          - for (var i = 0; i < icons.names.length; ++i) {
+            - if(icons.names[i].slice(-2) !== '-f') {
+              .font-icon-list.col-md-2.col-sm-3.col-xs-6.col-xs-6
+                .font-icon-detail
+                  span(class='#{icons.names[i]}')
+                  input.font-icon-name(type='text',readonly,value='#{icons.names[i]}')
+                fieldset.font-icon-code
+                  input.code-value(type='text',readonly,value='#{icons.codes[i]}')
+                  input.unicode(type='text',readonly,maxlength='1',value='#{icons.unicodes[i]}')
+                  input.unicode-text(type='text',readonly,value='&#x#{icons.codes[i]}')
+            - }
+          - }
+        h3.subtitle.text-center Filled Icons
+        .row
+          - for (var i = 0; i < icons.names.length; ++i) {
+            - if(icons.names[i].slice(-2) == '-f') {
+              .font-icon-list.col-md-2.col-sm-3.col-xs-6.col-xs-6
+                .font-icon-detail
+                  span(class='#{icons.names[i]}')
+                  input.font-icon-name(type='text',readonly,value='#{icons.names[i]}')
+                fieldset.font-icon-code
+                  input.code-value(type='text',readonly,value='#{icons.codes[i]}')
+                  input.unicode(type='text',readonly,maxlength='1',value='#{icons.unicodes[i]}')
+                  input.unicode-text(type='text',readonly,value='&#x#{icons.codes[i]}')
+            - }
+          - }
+      //- #all-icons.row
+      //-   - for (var i = 0; i < icons.names.length; ++i) {
+      //-     .font-icon-list.col-md-2.col-sm-3.col-xs-6.col-xs-6
+      //-       .font-icon-detail
+      //-         span(class='#{icons.names[i]}')
+      //-         input.font-icon-name(type='text',readonly,value='#{icons.names[i]}')
+      //-       fieldset.font-icon-code
+      //-         input.code-value(type='text',readonly,value='#{icons.codes[i]}')
+      //-         input.unicode(type='text',readonly,maxlength='1',value='#{icons.unicodes[i]}')
+      //-         input.unicode-text(type='text',readonly,value='&#x#{icons.codes[i]}')
+      //-   - } 
+
+
+
+block download
+  #download_box
+    .container
+      p
+        a.download(href='#{iconFont.downloadPath}') Download Set
+          span(class='#{iconFont.downloadIcon}')
+
+
+block footer
+  footer.main-footer
+    .container
+      p 
+        | 2015 © #{iconFont.name} Font Set by Pixeden.
+        br 
+        | Version · #{iconFont.version}
+
+block scripts
+  
+  script(type='text/javascript', src='assets/js/main.js')
+  script.
+    $(document).ready(function(){
+
+    }) // Ready
+
+        

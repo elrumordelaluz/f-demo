@@ -1,0 +1,426 @@
+extend partials/mainLayout
+
+block header
+  header#top-bar
+    .container
+      img(src='assets/img/logo.png',alt='logo')
+
+block hero
+  section#hero_box
+    .container
+      h1.refs-title Documentation
+      p You will find in this document details on how to use our icon font and a list of useful helper classes.
+
+
+
+block content
+
+  section#docs_box
+    .container
+
+
+      section#default-css
+        h2.page-header Add our icon font 
+          small to your website
+        ol
+          li Copy the entire 
+            code #{iconFont.cssName}
+            |  directory into your project.
+          li In the 
+            code &lt;head&gt;
+            |  of your html, reference the location to our icon font CSS: 
+            span.italic #{iconFont.cssName}.css
+            | and if needed helper CSS: 
+            span.italic helper.css
+            | .
+            pre
+              code &lt;link rel=&quot;stylesheet&quot; href=&quot;path/to/#{iconFont.cssName}/css/#{iconFont.cssName}.css&quot;&gt;
+                | &#13;
+                | &lt;!-- Optional - Adds useful class to manipulate icon font display --&gt;
+                | &lt;link rel=&quot;stylesheet&quot; href=&quot;path/to/#{iconFont.cssName}/css/helper.css&quot;&gt;
+      
+      
+
+
+      section#inline
+        h2.page-header Place the icons 
+          small in your HTML
+
+        .row
+          .col-md-3.col-sm-4
+            p
+              span(class='#{docs.inline[0]}')  #{docs.inline[0]}
+              br
+              i(class='#{docs.inline[1]}')  #{docs.inline[1]}
+          .col-md-9.col-sm-8
+            p Easiest way is to place your icon inline using a html tag such as 
+              code &lt;span&gt; 
+              |  or 
+              code &lt;i&gt;
+              pre
+                code &lt;span class=&quot;#{docs.inline[0]}&quot;&gt;&lt;/span&gt; #{docs.inline[0]}
+                  | &lt;i class=&quot;#{docs.inline[1]}&quot;&gt;&lt;/span&gt; #{docs.inline[1]}
+
+            .alert.alert-success
+              i(class="#{docs.alert[0]} pe-lg") 
+              |  icon unicode is added with CSS and the pseudo-class :before.
+
+
+
+
+      section#icomoon
+        h2.page-header Compatible with Icomoon 
+          small font creator tool
+        p The IcoMoon app lets you build and use your own icon sets: 
+          a(target="_blank",href="http://icomoon.io/app/") IcoMoon App
+          | .
+          br
+          | You can import 
+          code icomoon/*selection.json*
+          | in the IcoMoon app using the *Import Icons* button (or via Main Menu &gt; Manage Projects) to retrieve this specific icon font.
+          br
+          | This way you can mix and match our icon font with other fonts or select only the icons you need and generate a new font.
+
+
+
+
+
+      
+      section#helper
+        h2.page-header
+          | Helper classes 
+          small
+            | based on font-awesome useful classes 
+            span.italic (optional)
+        p
+          | Below you will find a list of useful classes to modify the icon display, layout, sizes etc... They come with the helper.css file and are based on a modified version of font-awesome classes.
+          strong Important: 
+          span.italic
+            |  if you already use font-awesome (FA) icon font in your website, you might want to delete the classes in the helper file under 
+            code /* FA based classes */
+            |  and use the FA classes instead.
+
+
+  
+
+
+      section#larger
+        h2.page-header Larger Icons & Vertical Align 
+        .row
+          .col-md-3.col-sm-4
+            p
+              i(class='#{docs.larger} pe-lg pe-va')
+              |  #{docs.larger}
+            p
+              i(class='#{docs.larger} pe-2x pe-va')
+              |  #{docs.larger}
+            p
+              i(class='#{docs.larger} pe-3x pe-va')
+              |  #{docs.larger}
+            p
+              i(class='#{docs.larger} pe-4x pe-va')
+              |  #{docs.larger}
+            p
+              i(class='#{docs.larger} pe-5x pe-va')
+              |  #{docs.larger}
+          .col-md-9.col-sm-8
+            p
+              | To increase icon sizes relative to their container, use the 
+              code pe-lg
+              |  (33% increase), 
+              code pe-2x
+              | ,
+              code pe-3x
+              | , 
+              code pe-4x
+              | , or 
+              code pe-5x
+              |  classes.
+              br
+              |  To align the icon at the middle of a text, use the 
+              code pe-va
+              |  class.
+            pre
+              code &lt;p&gt;&lt;i class=&quot;#{docs.larger} pe-lg pe-va&quot;&gt;&lt;/i&gt; #{docs.larger}&lt;/p&gt;
+                | &lt;p&gt;&lt;i class=&quot;#{docs.larger} pe-2x pe-va&quot;&gt;&lt;/i&gt; #{docs.larger}&lt;/p&gt;
+                | &lt;p&gt;&lt;i class=&quot;#{docs.larger} pe-3x pe-va&quot;&gt;&lt;/i&gt; #{docs.larger}&lt;/p&gt;
+                | &lt;p&gt;&lt;i class=&quot;#{docs.larger} pe-4x pe-va&quot;&gt;&lt;/i&gt; #{docs.larger}&lt;/p&gt;
+                | &lt;p&gt;&lt;i class=&quot;#{docs.larger} pe-5x pe-va&quot;&gt;&lt;/i&gt; #{docs.larger}&lt;/p&gt;
+            .alert.alert-success
+              i(class="#{docs.alert[1]} pe-lg") 
+              |  If your icons are getting chopped off on top and bottom, make sure you have
+              |  sufficient line-height.
+
+
+
+      section#fixed-width
+        h2.page-header Fixed Width Icons
+        .row
+          .col-md-3.col-sm-4
+            ul.nav.nav-pills.nav-stacked.margin-bottom
+              li
+                a(href='#')
+                  i(class='#{docs.fixedWidth[0][0]} pe-fw')
+                  |   #{docs.fixedWidth[0][1]}
+              li
+                a(href='#')
+                  i(class='#{docs.fixedWidth[1][0]} pe-fw')
+                  |   #{docs.fixedWidth[1][1]}
+              li.active
+                a(href='#')
+                  i(class='#{docs.fixedWidth[2][0]} pe-fw')
+                  |   #{docs.fixedWidth[2][1]}
+              li
+                a(href='#')
+                  i(class='#{docs.fixedWidth[3][0]} pe-fw')
+                  |   #{docs.fixedWidth[3][1]}
+          .col-md-9.col-sm-8
+            p
+              | Use 
+              code pe-fw
+              |  to set icons at a fixed width. Great to use when variable icon widths throw off alignment.
+              |  Especially useful in things like nav lists. 
+              span.italic (Reminder: nav list classes in the example are from bootstrap)
+            pre
+              code &lt;ul class=&quot;nav nav-pills nav-stacked&quot;&gt;
+                |   &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;#{docs.fixedWidth[0][0]} pe-fw&quot;&gt;&lt;/i&gt; #{docs.fixedWidth[0][1]}&lt;/a&gt;&lt;/li&gt;
+                |   &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;#{docs.fixedWidth[1][0]} pe-fw&quot;&gt;&lt;/i&gt; #{docs.fixedWidth[1][1]}&lt;/a&gt;&lt;/li&gt;
+                |   &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;#{docs.fixedWidth[2][0]} pe-fw&quot;&gt;&lt;/i&gt; #{docs.fixedWidth[2][1]}&lt;/a&gt;&lt;/li&gt;
+                |   &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;#{docs.fixedWidth[3][0]} pe-fw&quot;&gt;&lt;/i&gt; #{docs.fixedWidth[3][1]}&lt;/a&gt;&lt;/li&gt;
+                | &lt;/ul&gt;
+
+
+
+      section#list
+        h2.page-header List Icons
+        .row
+          .col-md-3.col-sm-4
+            ul.pe-ul
+              li
+                i(class='#{docs.list[0]} pe-li')
+                | List icons (like these)
+              li
+                i(class='#{docs.list[1]} pe-li')
+                | can be used
+              li
+                i(class='#{docs.list[2]} pe-li')
+                | to easily replace
+              li
+                i(class='#{docs.list[3]} pe-li')
+                | default bullets in lists
+          .col-md-9.col-sm-8
+            p
+              | Use 
+              code pe-ul
+              |  and 
+              code pe-li
+              |  to easily replace default bullets in unordered lists.
+            pre
+              code &lt;ul class=&quot;pe-ul&quot;&gt;
+                |   &lt;li&gt;&lt;i class=&quot;pe-li #{docs.list[0]}&quot;&gt;&lt;/i&gt; List icons (like these) &lt;/li&gt;
+                |   &lt;li&gt;&lt;i class=&quot;pe-li #{docs.list[1]}&quot;&gt;&lt;/i&gt; can be used &lt;/li&gt;
+                |   &lt;li&gt;&lt;i class=&quot;pe-li #{docs.list[2]}&quot;&gt;&lt;/i&gt; to replace &lt;/li&gt;
+                |   &lt;li&gt;&lt;i class=&quot;pe-li #{docs.list[3]}&quot;&gt;&lt;/i&gt; default bullets in lists &lt;/li&gt;
+                | &lt;/ul&gt;
+
+
+      
+      section#bordered-pulled
+        h2.page-header Bordered & Pulled Icons
+        .row
+          .col-md-3.col-sm-4
+            p
+              i(class='#{docs.bordered} pe pe-2x pull-left pe-border')
+              |  Use a few styles together and you'll have easy pull quotes or a great introductory article icon.
+          .col-md-9.col-sm-8
+            p
+              | Use 
+              code pe-border
+              |  and 
+              code pull-right
+              |  or 
+              code pull-left
+              |  for easy pull quotes or
+              |  article graphics.
+            pre
+              code &lt;i class=&quot;pe #{docs.bordered} pe-2x pull-left pe-border&quot;&gt;&lt;/i&gt;
+                | Use a few styles together and you&apos;ll have easy pull quotes or a great introductory article icon.
+
+
+
+      section#spinning
+        h2.page-header Spinning Icons
+        .row
+          .col-md-3.col-sm-4
+            p
+              i(class='#{docs.spinning[0]} pe-2x pe-spin')
+              | &nbsp;  
+              i(class='#{docs.spinning[1]} pe-2x pe-spin')
+              | &nbsp;  
+              i(class='#{docs.spinning[2]} pe-2x pe-spin')
+          .col-md-9.col-sm-8
+            p
+              | Use the 
+              code pe-spin
+              |  class to get any icon to rotate. Works well with 
+              code #{docs.spinning[0]}
+              | ,
+              code #{docs.spinning[1]}
+              | , 
+              code #{docs.spinning[2]}
+              |  and others.
+            pre
+              code &lt;i class=&quot;#{docs.spinning[0]} pe-spin&quot;&gt;&lt;/i&gt;
+                | &lt;i class=&quot;#{docs.spinning[1]} pe-spin&quot;&gt;&lt;/i&gt;
+                | &lt;i class=&quot;#{docs.spinning[2]} pe-spin&quot;&gt;&lt;/i&gt;
+            p.alert.alert-success
+              i(class="#{docs.alert[2]} pe-lg")  
+              |   CSS3 animations aren't supported in IE8 - IE9.
+
+
+      
+      section#rotated-flipped
+        h2.page-header Rotated & Flipped
+        .row
+          .col-md-3.col-sm-4
+            p(style='font-size: 18px;')
+              i(class='#{docs.rotated}')
+              |   normal
+              br
+              i(class='#{docs.rotated} pe-rotate-90')
+              |   pe-rotate-90
+              br
+              i(class='#{docs.rotated} pe-rotate-180')
+              |   pe-rotate-180
+              br
+              i(class='#{docs.rotated} pe-rotate-270')
+              |   pe-rotate-270
+              br
+              i(class='#{docs.rotated} pe-flip-horizontal')
+              |   pe-flip-horizontal
+              br
+              i(class='#{docs.rotated} pe-flip-vertical')
+              |   pe-flip-vertical
+          .col-md-9.col-sm-8
+            p
+              | To arbitrarily rotate and flip icons, use the 
+              code pe-rotate-*
+              |  and 
+              code pe-flip-*
+              |  classes.
+            pre
+              code &lt;i class=&quot;#{docs.rotated}&quot;&gt;&lt;/i&gt;&amp;nbsp; normal&lt;br&gt;
+                | &lt;i class=&quot;#{docs.rotated} pe-rotate-90&quot;&gt;&lt;/i&gt;&amp;nbsp; pe-rotate-90&lt;br&gt;
+                | &lt;i class=&quot;#{docs.rotated} pe-rotate-180&quot;&gt;&lt;/i&gt;&amp;nbsp; pe-rotate-180&lt;br&gt;
+                | &lt;i class=&quot;#{docs.rotated} pe-rotate-270&quot;&gt;&lt;/i&gt;&amp;nbsp; pe-rotate-270&lt;br&gt;
+                | &lt;i class=&quot;#{docs.rotated} pe-flip-horizontal&quot;&gt;&lt;/i&gt;&amp;nbsp; pe-flip-horizontal&lt;br&gt;
+                | &lt;i class=&quot;#{docs.rotated} pe-flip-vertical&quot;&gt;&lt;/i&gt;&amp;nbsp; pe-flip-vertical
+
+
+  
+      - if(docs.hoverAlt) {
+        section#hover-alt
+          h2.page-header Hover Alternate Style
+          .row
+            .col-md-3.col-sm-4
+              style(type='text/css').
+                .icon-alt { font-family: 'pe-icon-set-comunication'; margin: 5px; }
+                .icon-1:before { content: !{docs.hoverAlt[0][0]} }
+                .icon-1:hover:before { content: !{docs.hoverAlt[0][1]} }
+                .icon-2:before { content: !{docs.hoverAlt[1][0]} }
+                .icon-2:hover:before { content: !{docs.hoverAlt[1][1]} }
+                .icon-3:before { content: !{docs.hoverAlt[2][0]} }
+                .icon-3:hover:before { content: !{docs.hoverAlt[2][1]} }
+                .icon-4:before { content: !{docs.hoverAlt[3][0]} }
+                .icon-4:hover:before { content: !{docs.hoverAlt[3][1]} }
+                .icon-5:before { content: !{docs.hoverAlt[4][0]} }
+                .icon-5:hover:before { content: !{docs.hoverAlt[4][1]} }
+                .icon-6:before { content: !{docs.hoverAlt[5][0]} }
+                .icon-6:hover:before { content: !{docs.hoverAlt[5][1]} }
+                .icon-7:before { content: !{docs.hoverAlt[6][0]} }
+                .icon-7:hover:before { content: !{docs.hoverAlt[6][1]} }
+                .icon-8:before { content: !{docs.hoverAlt[7][0]} }
+                .icon-8:hover:before { content: !{docs.hoverAlt[7][1]} }
+                .icon-9:before { content: !{docs.hoverAlt[8][0]}  }
+                .icon-9:hover:before { content: !{docs.hoverAlt[8][1]}  }
+                .icon-10:before { content: !{docs.hoverAlt[9][0]}  }
+                .icon-10:hover:before { content: !{docs.hoverAlt[9][1]}  }
+              p(style='font-size: 28px;')
+                span.icon-alt.icon-1
+                span.icon-alt.icon-2
+                span.icon-alt.icon-3
+                span.icon-alt.icon-4
+                span.icon-alt.icon-5
+                br
+                span.icon-alt.icon-6
+                span.icon-alt.icon-7
+                span.icon-alt.icon-8
+                span.icon-alt.icon-9
+                span.icon-alt.icon-10
+            .col-md-9.col-sm-8
+              p
+                | Setting specific 
+                code content
+                |  code to any 
+                code :before
+                |  pseudo-element you could easily alternate between styles (stroke & filled).
+              .col-md-6.col-sm-6
+                pre
+                  code &lt;!-- Stroke to Fill --&gt;
+                    | &lt;span class=&quot;icon-alt icon-1&quot;&gt;&lt;/span&gt;
+                    | &lt;span class=&quot;icon-alt icon-2&quot;&gt;&lt;/span&gt;
+                    | &lt;span class=&quot;icon-alt icon-3&quot;&gt;&lt;/span&gt;
+                    | &lt;span class=&quot;icon-alt icon-4&quot;&gt;&lt;/span&gt;
+                    | &lt;span class=&quot;icon-alt icon-5&quot;&gt;&lt;/span&gt;
+                    | &lt;br&gt;
+                    | &lt;!-- Fill to Stroke --&gt;
+                    | &lt;span class=&quot;icon-alt icon-6&quot;&gt;&lt;/span&gt;
+                    | &lt;span class=&quot;icon-alt icon-7&quot;&gt;&lt;/span&gt;
+                    | &lt;span class=&quot;icon-alt icon-8&quot;&gt;&lt;/span&gt;
+                    | &lt;span class=&quot;icon-alt icon-8&quot;&gt;&lt;/span&gt;
+                    | &lt;span class=&quot;icon-alt icon-10&quot;&gt;&lt;/span&gt;
+              .col-md-6.col-sm-6
+                pre
+                  code .icon-alt { font-family: 'pe-icon-set-comunication'; margin: 5px; }
+                    | .icon-1:before { content: !{docs.hoverAlt[0][0]} }
+                    | .icon-1:hover:before { content: !{docs.hoverAlt[0][1]} }
+                    | .icon-2:before { content: !{docs.hoverAlt[1][0]} }
+                    | .icon-2:hover:before { content: !{docs.hoverAlt[1][1]} }
+                    | .icon-3:before { content: !{docs.hoverAlt[2][0]} }
+                    | .icon-3:hover:before { content: !{docs.hoverAlt[2][1]} }
+                    | .icon-4:before { content: !{docs.hoverAlt[3][0]} }
+                    | .icon-4:hover:before { content: !{docs.hoverAlt[3][1]} }
+                    | .icon-5:before { content: !{docs.hoverAlt[4][0]} }
+                    | .icon-5:hover:before { content: !{docs.hoverAlt[4][1]} }
+                    | .icon-6:before { content: !{docs.hoverAlt[5][0]} }
+                    | .icon-6:hover:before { content: !{docs.hoverAlt[5][1]} }
+                    | .icon-7:before { content: !{docs.hoverAlt[6][0]} }
+                    | .icon-7:hover:before { content: !{docs.hoverAlt[6][1]} }
+                    | .icon-8:before { content: !{docs.hoverAlt[7][0]} }
+                    | .icon-8:hover:before { content: !{docs.hoverAlt[7][1]} }
+                    | .icon-9:before { content: !{docs.hoverAlt[8][0]}  }
+                    | .icon-9:hover:before { content: !{docs.hoverAlt[8][1]}  }
+                    | .icon-10:before { content: !{docs.hoverAlt[9][0]}  }
+                    | .icon-10:hover:before { content: !{docs.hoverAlt[9][1]}  }
+              p
+                | Hint: you could find the specific code for every icon in the 
+                a(href='reference.html') Reference page
+                | . Be sure to check the "Show codes" checkbox on the top bar.
+      - }
+
+
+
+block footer
+  footer.main-footer.refs
+    .container
+      p 
+        | 2015 © #{iconFont.name} Font Set by Pixeden.
+        br 
+        | Version · #{iconFont.version}
+
+
+block scripts
+  script.
+    hljs.initHighlightingOnLoad();
+
+

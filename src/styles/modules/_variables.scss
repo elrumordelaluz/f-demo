@@ -1,0 +1,60 @@
+// General Colors
+// $darkColor:#3c4041; // Media Icons
+// $darkColor:#1a1a1a;
+$darkColor:#1a1a1a;
+$darkGrey:#eaeaea;
+$middleGrey:#f6f6f6;
+
+
+// Demo Specific stuff
+$demoColor:#aadce2;
+
+$fontName: 'pe-icon-set-comunication';
+$fontExtraName: 'pe-icon-set-edition';
+$moreIcon : "\e61b";
+$lessIcon : "\e625";
+$bg : url(../img/bg-edition.jpg);
+$hgroupPT : 60px;
+
+
+// Demo custom fonts
+// if font :: TRUE >> verify @import "fonts" in style.scss
+$customFonts : true;
+
+$demoFont1 : 'novecento_wide_bookbold';
+$demoFont3 : 'novecento_widebook';
+$demoFont2 : '';
+
+@if ($customFonts) {
+
+}
+
+%h1 {
+  letter-spacing: 2px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 48px;
+  text-transform: uppercase;
+  color:black;
+  font-weight: 400;
+  margin-top: 40px;
+  display: inline-block;
+  border-bottom:1px solid black;
+  padding-bottom: 20px;
+}
+
+%h2 {
+  letter-spacing: 1px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+  color:black;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+%h2span {
+  font-family: 'Roboto', sans-serif; 
+  font-weight: 700;
+  // color:#ff6169;
+}
+
+
