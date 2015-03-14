@@ -86,7 +86,7 @@ gulp.task('clean', function(cb) {
 });
 
 gulp.task('copy-fonts', function(){
-    return gulp.src('src/fonts/*.*')
+    return gulp.src('src/fonts/**/*.*')
         .pipe(gulp.dest('dist/assets/fonts/'));
 });
 
