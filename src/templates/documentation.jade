@@ -1,5 +1,8 @@
 extend partials/mainLayout
 
+block title
+  title Documentation Icon Font - #{iconFont.name} - by Pixeden.
+
 block header
   header#top-bar
     .container
@@ -346,17 +349,17 @@ block content
                 .icon-10:before { content: !{docs.hoverAlt[9][0]}  }
                 .icon-10:hover:before { content: !{docs.hoverAlt[9][1]}  }
               p(style='font-size: 28px;')
-                span.icon-alt.icon-1
-                span.icon-alt.icon-2
-                span.icon-alt.icon-3
-                span.icon-alt.icon-4
-                span.icon-alt.icon-5
+                span.icon-alt.pe-fw-h.icon-1
+                span.icon-alt.pe-fw-h.icon-2
+                span.icon-alt.pe-fw-h.icon-3
+                span.icon-alt.pe-fw-h.icon-4
+                span.icon-alt.pe-fw-h.icon-5
                 br
-                span.icon-alt.icon-6
-                span.icon-alt.icon-7
-                span.icon-alt.icon-8
-                span.icon-alt.icon-9
-                span.icon-alt.icon-10
+                span.icon-alt.pe-fw-h.icon-6
+                span.icon-alt.pe-fw-h.icon-7
+                span.icon-alt.pe-fw-h.icon-8
+                span.icon-alt.pe-fw-h.icon-9
+                span.icon-alt.pe-fw-h.icon-10
             .col-md-9.col-sm-8
               p
                 | Setting specific 
@@ -364,6 +367,10 @@ block content
                 |  code to any 
                 code :before
                 |  pseudo-element you could easily alternate between styles (stroke & filled).
+              p Use 
+                code pe-fw-h
+                |  to set icons at a fixed width.
+                
               .col-md-6.col-sm-6
                 pre
                   code &lt;!-- Stroke to Fill --&gt;
