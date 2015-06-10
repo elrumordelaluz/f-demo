@@ -4,6 +4,16 @@
 ********************************/
 
 
+@media (max-width: 985px) {
+  .navbar-header span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 210px;
+    display: block;
+  }
+}
+
 @media (max-width: 767px) {
 
   #showcase h2 {
