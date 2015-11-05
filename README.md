@@ -1,22 +1,20 @@
-# Icon Font Demo Page
+# Icon Font Demo
 
-First, clone the repository. 'MyFontDemo' is the name you want for the folder.
+- Clone the repository ('MyFontDemo' is the name you want for the new folder)
 ```bash
     git clone https://github.com/elrumordelaluz/f-demo.git MyFontDemo
 ```
-Then:
+- Change the `"name"` attribute in `package.json` file with **the same name** of the new `@font-face`
+- Add a `.scss` file with **the same name** of the new `@font-face` in `src/styles` folder
+- Add the font files in `src/fonts` folder
+- Customize the `config.jade` in `src/templates/partials` with the arrays generated*
+- Install the `npm` and `bower` components, then make a firt _build_
+
 ```bash
     $ sudo npm install
     $ bower install
-    $ gulp
+    $ gulp #or gulp watch
 ```
-
-**Remember to edit the "name" attribute of the `package.json` file with the same name of the generated font.**
-
-It's important to have:
-- a `.scss` file for the _@font-face_ under `/styles`
-- the font files under `/fonts`
-- customize the `config.jade` file under `/templates/partials`
 
 To generate the package:
 ```bash
