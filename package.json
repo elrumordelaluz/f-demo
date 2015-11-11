@@ -1,7 +1,7 @@
 {
-  "name": "pe-icon-set-comunication",
+  "name": "pe-icon-set-example",
   "version": "1.0.0",
-  "description": "Starting project templatez",
+  "description": "Icon Set Example",
   "main": "index.js",
   "repository": {
     "type": "git",
